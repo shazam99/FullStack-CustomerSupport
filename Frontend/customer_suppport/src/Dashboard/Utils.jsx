@@ -10,26 +10,9 @@ export const DayName = ({ day }) => {
 };
 
 
-
-export const CurrentTime = () => {
-    const currentDate = new Date();
-
-    let hours = currentDate.getHours();
-    const minutes = currentDate.getMinutes();
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12;
-    hours = hours ? hours : 12;
-
-    const formattedMinutes = minutes < 10 ? '0' + minutes : minutes;
-
-    return `${hours}:${formattedMinutes} ${ampm}`;
-};
-
 export const ConvertTo24HourFormat = (time12h) => {
-    // Return empty if input is empty
     if (!time12h) return '';
 
-    // Regular expression to validate time format (hh:mm AM/PM)
     const timeRegex = /^(0?[1-9]|1[0-2]):([0-5][0-9]) (AM|PM)$/i;
     if (!timeRegex.test(time12h)) {
         return 'Invalid format. Use HH:MM AM/PM';
@@ -38,7 +21,6 @@ export const ConvertTo24HourFormat = (time12h) => {
     const [time, modifier] = time12h.split(' ');
     let [hours, minutes] = time.split(':');
 
-    // Convert hours to number for easy manipulation
     hours = parseInt(hours, 10);
 
     if (modifier.toLowerCase() === 'pm' && hours < 12) {
@@ -48,10 +30,15 @@ export const ConvertTo24HourFormat = (time12h) => {
         hours = 0;
     }
 
-    // Format hours and minutes to always show two digits
     const formattedHours = hours.toString().padStart(2, '0');
     const formattedMinutes = minutes.padStart(2, '0');
 
     return `${formattedHours}:${formattedMinutes}`;
 };
 
+export const formatTime = (time) => {
+    const [hour, minute] = time.split(':');
+    const period = hour >= 12 ? 'PM' : 'AM';
+    const formattedHour = hour % 12 || 12;
+    return `${formattedHour}:${minute} ${period}`;
+};
