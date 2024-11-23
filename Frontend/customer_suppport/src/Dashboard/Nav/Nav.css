@@ -1,0 +1,17 @@
+.nav_main{
+    background: #D6E3FE;
+    padding: 10px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    color: #001B3F;
+    align-items: center;
+    text-align: center;
+}
+.nav_main button{
+    background: #001B3F;
+    color: #D6E3FE;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+}

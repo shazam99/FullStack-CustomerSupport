@@ -1,0 +1,65 @@
+.dashboard {
+    height: 100%;
+    background: bisque;
+}
+.dashboard section{
+    padding: 30px 10px;
+}
+.dashboard .intro{
+    background: #FDE5E4;
+      text-align: center;
+}
+.dashboard .intro .main{
+    margin: 0 auto;
+    max-width:200px;
+}
+.dashboard .intro img{
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.dashboard .contact{
+    background: #EFF5FD;
+    font-size: 14px;
+
+}
+.dashboard .contact .contactType{
+    text-align: left !important;
+    margin: 0 auto;
+    max-width:200px;
+    padding: 5px 10px;
+}
+
+.dashboard .contact .contactMethod,
+.dashboard .contact .contactAvailability,
+.dashboard .scheduleHours
+{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+ .dashboard .contact .contactMethod span{
+     margin: 0 10px;
+ }
+
+
+.dashboard .contact .contactAvailability{
+    text-align: left !important;
+    margin: 0 auto;
+    /*max-width:200px;*/
+    padding: 10px;
+}
+.dashboard .scheduleHours{
+    background: #FDE5E4;
+    font-size: 14px;
+}
+.dashboard .scheduleHours .scheduleHoursDiv > *{
+    padding: 5px 10px;
+}
+.dashboard .scheduleHours .main{
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: left !important;
+    display: block;
+}
