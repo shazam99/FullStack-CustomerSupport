@@ -31,7 +31,7 @@ const Nav = ({setSchedule}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (formData.date < todayDate) {
+        if (formData.date <= todayDate) {
             alert("Error: Special Day should be a future date!");
             return;
         }
@@ -81,7 +81,7 @@ const Nav = ({setSchedule}) => {
             {isDialogOpen && (
                 <div className="dialog">
                     <div className="dialog-content">
-                        <h2>Add Special Timings</h2>
+                        <h2>Add Special Day</h2>
                         <form onSubmit={handleSubmit}>
                             <div className="dialog-element">
                                 <label>Date:</label>
